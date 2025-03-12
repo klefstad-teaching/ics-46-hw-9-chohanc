@@ -90,7 +90,9 @@ void load_words(set<string> & word_list, const string& file_name)
 
 void print_word_ladder(const vector<string>& ladder)
 {
-    cout << "Words ladder found: "
+    if (ladder.empty) return;
+
+    cout << "Words ladder found: ";
 
     for (size_t i = 0; i < ladder.size(); ++i)
     {
