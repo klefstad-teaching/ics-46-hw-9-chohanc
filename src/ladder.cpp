@@ -90,19 +90,21 @@ void load_words(set<string> & word_list, const string& file_name)
 
 void print_word_ladder(const vector<string>& ladder)
 {
-    if (ladder.empty()) return;
-
-    cout << "Words ladder found: ";
-
-    for (size_t i = 0; i < ladder.size(); ++i)
+    if (!ladder.empty())
     {
-        cout << ladder[i] << " ";
-    }
+        cout << "Words ladder found: ";
 
+        for (size_t i = 0; i < ladder.size(); ++i)
+        {
+            cout << ladder[i] << " ";
+        }
+    }
     cout << endl;
 }
 
-void verify_word_ladder()
+void verify_word_ladder(const vector<string>& ladder, const set<string>& word_list)
 {
-    return;
+    for(size_t i = 1; i < ladder.size(); ++i)
+        if (word_list.find(ladder[i]) == word_list.end())
+            cout << "Exist word not in dictionary." << endl;
 }

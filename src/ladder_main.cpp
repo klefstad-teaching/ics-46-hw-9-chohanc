@@ -16,4 +16,5 @@ int main()
     if(word1 == word2) return 0;
     vector<string> ladder = generate_word_ladder(word1, word2, word_list);
     print_word_ladder(ladder);
+    verify_word_ladder(ladder, word_list);
 }
